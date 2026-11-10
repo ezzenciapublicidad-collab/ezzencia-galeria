@@ -15,14 +15,23 @@
 <main class="gallery" aria-label="Promociones e información de Ezzencia">
 <img class="photo" src="black-days.webp" alt="Black Days Ezzencia: toda la tienda a precio de distribuidor" fetchpriority="high" width="1248" height="1248">
 <img class="photo" src="precio-distribuidor.webp" alt="Toda la perfumería a precio de distribuidor, 17 mil pesos menos sobre precio de etiqueta" loading="lazy" width="1248" height="1248">
-<img class="photo" src="ubicacion.webp" alt="Ubicación del showroom: Calle 11 número 27-05, Ricaurte, Bogotá" loading="lazy" width="1248" height="1248">
+<a href="https://maps.app.goo.gl/38xHyzaGo6vpahfRA"
+   target="_blank"
+   rel="noopener noreferrer">
+  <img class="photo"
+       src="ubicacion.webp"
+       alt="Cómo llegar al showroom Ezzencia"
+       loading="lazy"
+       width="1248"
+       height="1248">
+</a>
 <img class="photo" src="navidad.webp" alt="Anticípate a comprar tus perfumes para Navidad" loading="lazy" width="1248" height="1248">
 </main>
 <footer>Desliza para ver todas las imágenes · Toca una imagen para ampliarla</footer>
 <dialog id="visor" aria-label="Imagen ampliada"><button aria-label="Cerrar imagen" onclick="document.querySelector('#visor').close()">×</button><img id="ampliada" alt="Imagen ampliada"></dialog>
 <script>
 const visor=document.querySelector('#visor'),ampliada=document.querySelector('#ampliada');
-document.querySelectorAll('.photo').forEach(img=>img.addEventListener('click',()=>{ampliada.src=img.src;ampliada.alt=img.alt;visor.showModal()}));
+document.querySelectorAll('.photo:not(a .photo)').forEach(img=>img.addEventListener('click',()=>{ampliada.src=img.src;ampliada.alt=img.alt;visor.showModal()}));
 visor.addEventListener('click',e=>{if(e.target===visor)visor.close()});
 </script>
 </body>
