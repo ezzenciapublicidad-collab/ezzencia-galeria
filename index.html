@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0908">
+<meta name="description" content="Conoce los Black Days de Ezzencia Perfumería y visita nuestro showroom en Bogotá.">
+<title>Black Days | Ezzencia Perfumería</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#0b0908;color:#f8efd8;font-family:Arial,Helvetica,sans-serif}header{padding:20px 12px 16px;text-align:center;background:#0b0908;border-bottom:1px solid #4b3620}header .brand{font-family:Georgia,serif;letter-spacing:.18em;font-size:clamp(20px,5vw,27px);color:#e8c47c}header p{margin:7px 0 0;color:#c8b48d;font-size:12px;letter-spacing:.12em;text-transform:uppercase}.gallery{width:min(100%,590px);margin:0 auto;padding:12px 10px 30px;display:grid;gap:12px}.photo{display:block;width:100%;height:auto;border-radius:9px;box-shadow:0 7px 28px #0009;cursor:zoom-in}footer{text-align:center;color:#baaa8e;font-size:12px;padding:0 15px 28px}dialog{border:0;padding:0;background:#000;max-width:100vw;max-height:100dvh;width:100vw;height:100dvh}dialog::backdrop{background:#000}dialog img{width:100%;height:100%;object-fit:contain}dialog button{position:fixed;top:max(14px,env(safe-area-inset-top));right:14px;color:white;background:#222c;border:1px solid #ffffff66;border-radius:50%;width:43px;height:43px;font-size:27px;cursor:pointer}body:has(dialog[open]){overflow:hidden}@media(min-width:800px){header{padding:27px 12px 21px}.gallery{padding-top:20px;gap:20px}}
+</style>
+</head>
+<body>
+<header><div class="brand">EZZENCIA</div><p>Perfumería · Bogotá</p></header>
+<main class="gallery" aria-label="Promociones e información de Ezzencia">
+<img class="photo" src="black-days.webp" alt="Black Days Ezzencia: toda la tienda a precio de distribuidor" fetchpriority="high" width="1248" height="1248">
+<img class="photo" src="precio-distribuidor.webp" alt="Toda la perfumería a precio de distribuidor, 17 mil pesos menos sobre precio de etiqueta" loading="lazy" width="1248" height="1248">
+<img class="photo" src="ubicacion.webp" alt="Ubicación del showroom: Calle 11 número 27-05, Ricaurte, Bogotá" loading="lazy" width="1248" height="1248">
+<img class="photo" src="navidad.webp" alt="Anticípate a comprar tus perfumes para Navidad" loading="lazy" width="1248" height="1248">
+</main>
+<footer>Desliza para ver todas las imágenes · Toca una imagen para ampliarla</footer>
+<dialog id="visor" aria-label="Imagen ampliada"><button aria-label="Cerrar imagen" onclick="document.querySelector('#visor').close()">×</button><img id="ampliada" alt="Imagen ampliada"></dialog>
+<script>
+const visor=document.querySelector('#visor'),ampliada=document.querySelector('#ampliada');
+document.querySelectorAll('.photo').forEach(img=>img.addEventListener('click',()=>{ampliada.src=img.src;ampliada.alt=img.alt;visor.showModal()}));
+visor.addEventListener('click',e=>{if(e.target===visor)visor.close()});
+</script>
+</body>
+</html>
